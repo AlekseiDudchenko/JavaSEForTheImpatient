@@ -72,8 +72,8 @@ public class Point {
         this.y *= scale;
     }
 
-    boolean equals(Point point){
-        return (this.x == point.x && this.y == point.y);
+    boolean equals(Point otherPoint){
+        return (this.x == otherPoint.x && this.y == otherPoint.y);
     }
 
     @Override

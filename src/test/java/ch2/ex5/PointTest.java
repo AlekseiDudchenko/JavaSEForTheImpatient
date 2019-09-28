@@ -47,6 +47,7 @@ class PointTest {
         Point firstPoint = new Point();
         Point secondPoint = new Point();
         assertTrue(firstPoint.equals(secondPoint));
+        assertTrue(secondPoint.equals(firstPoint));
         firstPoint = firstPoint.translate(1,5);
         assertFalse(firstPoint.equals(secondPoint));
         assertTrue(firstPoint.equals(new Point(1,5)));
