@@ -1,6 +1,6 @@
 package ch2.ex16;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Queue {
 
@@ -9,14 +9,14 @@ public class Queue {
      */
     void addNode(String string){
         Node newNode = new Node(string);
-        nodes.add(newNode);
+        nodes.addLast(newNode);
     }
 
     /**
      * Delete element from the top of the Queue
      */
     void  removeNode(){
-        nodes.remove(0);
+        nodes.removeFirst();
     }
 
     public static class Node{
@@ -32,9 +32,13 @@ public class Queue {
         }
     }
 
-    private  ArrayList<Node> nodes = new ArrayList<>();
+    Queue(){
+        nodes = new LinkedList<>();
+    }
 
-    public ArrayList<Node> getNodes() {
+    private LinkedList<Node> nodes;
+
+    public LinkedList<Node> getNodes() {
         return nodes;
     }
 
