@@ -4,6 +4,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Fully implement the Invoice class in Section 2.6.1, “Static Nested Classes”
+ * (page 85). Provide a method that prints the invoice and a demo program
+ * that constructs and prints a sample invoice.
+ */
+
 public class Invoice {
 
     private Date date;
