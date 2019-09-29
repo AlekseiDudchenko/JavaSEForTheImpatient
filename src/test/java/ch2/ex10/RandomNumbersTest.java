@@ -1,0 +1,65 @@
+package ch2.ex10;
+
+
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.stream.IntStream;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class RandomNumbersTest {
+
+    @Test
+    void randomFromTheSame(){
+        int[] array = new int[]{2,2,2,2,2,2};
+        IntStream.range(0, 50).forEach(n -> {
+            assertEquals(2,RandomNumbers.randomElement(array));
+        });
+    }
+
+    @Test
+    void randomFromDifferent(){
+        int[] array = new int[]{1,2,3,1,2,3,1,2,3,1,2,3};
+        int[] array2 = new  int[]{4,5,6,7,8,9};
+        IntStream.range(0, 20).forEach(n -> {
+            int randomInt = RandomNumbers.randomElement(array);
+            assertTrue(randomInt == 1 || randomInt == 2 ||  randomInt == 3);
+            int randomInt2 = RandomNumbers.randomElement(array2);
+            assertFalse(randomInt2 == 1 ||  randomInt2 == 2 || randomInt2 == 3);
+        });
+    }
+
+    @Test
+    void randomArrayListFromTheSame(){
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        arrayList.add(1);
+        arrayList.add(1);
+        arrayList.add(1);
+        arrayList.add(1);
+        arrayList.add(1);
+        arrayList.add(1);
+        IntStream.range(0, 10).forEachOrdered(n -> {
+            assertEquals(1,RandomNumbers.randomElement(arrayList));
+        });
+    }
+
+    @Test
+    void randomArrayListFromDiff(){
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        arrayList.add(1);
+        arrayList.add(2);
+        arrayList.add(3);
+        ArrayList<Integer> arrayList2 = new ArrayList<>();
+        arrayList2.add(4);
+        arrayList2.add(5);
+        arrayList2.add(6);
+        IntStream.range(0, 50).forEach(n -> {
+            int randomInt = RandomNumbers.randomElement(arrayList);
+            assertTrue(randomInt == 1 || randomInt == 2 ||  randomInt == 3);
+            randomInt = RandomNumbers.randomElement(arrayList2);
+            assertFalse(randomInt == 1 ||  randomInt == 2 || randomInt == 3);
+        });
+    }
+
+}

@@ -13,8 +13,8 @@ import java.util.Date;
 public class Invoice {
 
     private Date date;
-    private int invoiceNumber = 0;
-    private int amountOfItems = 0;
+    private int invoiceNumber;
+    private int amountOfItems;
     public static int totalNumber;
 
     public Invoice(){

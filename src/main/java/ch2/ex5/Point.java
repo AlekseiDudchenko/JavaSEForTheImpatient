@@ -21,9 +21,10 @@ public class Point {
         this.y = y;
     }
 
+    /**
+     * set x = 0, y = 0
+     */
     public Point(){
-        x = 0;
-        y = 0;
     }
 
     double getX() {
