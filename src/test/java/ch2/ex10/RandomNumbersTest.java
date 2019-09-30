@@ -53,4 +53,16 @@ class RandomNumbersTest {
         });
     }
 
+    @Test
+    void emptyArrayList(){
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        assertEquals(0, RandomNumbers.randomElement(arrayList));
+    }
+
+    @Test
+    void emptyArray(){
+        int[] array = new int[]{};
+        assertEquals(0, RandomNumbers.randomElement(array));
+    }
+
 }
