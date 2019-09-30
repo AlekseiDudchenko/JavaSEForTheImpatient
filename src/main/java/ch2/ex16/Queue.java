@@ -45,11 +45,11 @@ public class Queue {
 
     private LinkedList<Node> nodes;
 
-    public LinkedList<Node> getNodes() {
+    LinkedList<Node> getNodes() {
         return nodes;
     }
 
-    public String toString(int nodeIndex) {
+    String toString(int nodeIndex) {
         return nodes.get(nodeIndex).toString();
     }
 }
