@@ -1,4 +1,6 @@
 .idea
+.target
 main.iml
 test.iml
 JavaSEForTheImpatient.iml
+*.iml
