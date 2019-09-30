@@ -33,12 +33,7 @@ class RandomNumbersTest {
     @Test
     void randomArrayListFromTheSame(){
         ArrayList<Integer> arrayList = new ArrayList<>();
-        arrayList.add(1);
-        arrayList.add(1);
-        arrayList.add(1);
-        arrayList.add(1);
-        arrayList.add(1);
-        arrayList.add(1);
+        IntStream.range(0, 50).forEachOrdered(n -> {arrayList.add(1);});
         IntStream.range(0, 10).forEachOrdered(n -> {
             assertEquals(1,RandomNumbers.randomElement(arrayList));
         });
@@ -47,13 +42,9 @@ class RandomNumbersTest {
     @Test
     void randomArrayListFromDiff(){
         ArrayList<Integer> arrayList = new ArrayList<>();
-        arrayList.add(1);
-        arrayList.add(2);
-        arrayList.add(3);
+        IntStream.range(1, 4).forEachOrdered(n -> {arrayList.add(n);});
         ArrayList<Integer> arrayList2 = new ArrayList<>();
-        arrayList2.add(4);
-        arrayList2.add(5);
-        arrayList2.add(6);
+        IntStream.range(4, 10).forEachOrdered(n -> {arrayList2.add(n);});
         IntStream.range(0, 50).forEach(n -> {
             int randomInt = RandomNumbers.randomElement(arrayList);
             assertTrue(randomInt == 1 || randomInt == 2 ||  randomInt == 3);
