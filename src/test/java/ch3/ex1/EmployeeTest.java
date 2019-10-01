@@ -11,11 +11,11 @@ class EmployeeTest {
     @Test
     void constructorWithoutArguments(){
         Employee firstEmployee = new Employee();
-        assertEquals(Employee.number-1, firstEmployee.getId());
+        assertEquals(Employee.number, firstEmployee.getId());
         assertEquals(0, firstEmployee.getSalary());
 
         Employee secondEmployee = new Employee();
-        assertEquals(Employee.number-1, secondEmployee.getId());
+        assertEquals(Employee.number, secondEmployee.getId());
         assertEquals(0, secondEmployee.getSalary());
     }
 
@@ -29,6 +29,14 @@ class EmployeeTest {
         Employee[] employees = new Employee[]{new Employee(100), new Employee(200)};
         assertEquals(100, employees[0].getSalary());
         assertEquals(200, employees[1].getSalary());
+    }
+
+    @Test
+    void getNameTest(){
+        Employee employee = new Employee();
+        assertEquals("Unknown", employee.getName());
+        employee = new Employee("Ivan");
+        assertEquals("Ivan", employee.getName());
     }
 
     @Test
@@ -92,7 +100,7 @@ class EmployeeTest {
     }
 
     @Test
-    void nameOfEmployeeWithLargestSalary(){
+    void nameOfEmployeeWithLargestSalaryArray(){
         Employee[] employees = new Employee[5];
         employees[0] = new Employee(100);
         employees[1] = new Employee(50);
@@ -103,5 +111,19 @@ class EmployeeTest {
         Employee largestEmpl =  (Employee)Measurable.largest(employees);
         assertEquals(employees[4].getName(), largestEmpl.getName());
     }
+
+    @Test
+    void nameOfEmployeeWithLargestSalaryArrayList(){
+        ArrayList<Measurable> employees = new ArrayList<>();
+        employees.add(new Employee("Bob", 100));
+        employees.add(new Employee("Bill", 2000));
+        employees.add(new Employee("Alex", 10000));
+        employees.add(new Employee("Matthias", 5000));
+
+        Employee largestEmpl =  (Employee)Measurable.largest(employees);
+        assertEquals("Alex", largestEmpl.getName());
+    }
+
+
 
 }

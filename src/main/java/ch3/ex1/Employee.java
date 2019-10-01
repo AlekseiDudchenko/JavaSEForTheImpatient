@@ -19,7 +19,8 @@ public class Employee implements Measurable{
     static int number;
 
     public String getName() {
-        return name;
+        if (name == null) return "Unknown";
+        else return name;
     }
 
     public void setName(String name){
@@ -39,8 +40,8 @@ public class Employee implements Measurable{
     }
 
     Employee(){
-        setId();
         number +=1;
+        setId();
     }
 
     Employee(double salary){

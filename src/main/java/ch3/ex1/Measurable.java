@@ -32,5 +32,14 @@ public interface Measurable{
         }
         return largestObject;
     }
+
+    static  Measurable largest(ArrayList<Measurable> objects){
+        Measurable largestObject = objects.get(0);
+        for (Measurable object: objects) {
+            if (object.getMeasure() > largestObject.getMeasure())
+                largestObject = object;
+        }
+        return largestObject;
+    }
 }
 
