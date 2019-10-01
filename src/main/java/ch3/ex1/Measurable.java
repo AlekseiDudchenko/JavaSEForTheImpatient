@@ -23,5 +23,14 @@ public interface Measurable{
         }
         else return 0;
     }
+
+    static Measurable largest(Measurable[] objects){
+        Measurable largestObject = objects[0];
+        for (Measurable object : objects) {
+                if (object.getMeasure() > largestObject.getMeasure())
+                    largestObject = object;
+        }
+        return largestObject;
+    }
 }
 

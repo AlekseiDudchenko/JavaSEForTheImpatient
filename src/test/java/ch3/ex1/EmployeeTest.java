@@ -79,4 +79,29 @@ class EmployeeTest {
         assertEquals(0, Measurable.average(empl));
     }
 
+    @Test
+    void largestTest(){
+        Measurable[] employees = new Employee[5];
+        employees[0] = new Employee(100);
+        employees[1] = new Employee(50);
+        employees[2] = new Employee(200);
+        employees[3] = new Employee(500);
+        employees[4] = new Employee(10000);
+
+        assertEquals(employees[4], Measurable.largest(employees));
+    }
+
+    @Test
+    void nameOfEmployeeWithLargestSalary(){
+        Employee[] employees = new Employee[5];
+        employees[0] = new Employee(100);
+        employees[1] = new Employee(50);
+        employees[2] = new Employee(200);
+        employees[3] = new Employee(500);
+        employees[4] = new Employee("Ivan",10000);
+
+        Employee largestEmpl =  (Employee)Measurable.largest(employees);
+        assertEquals(employees[4].getName(), largestEmpl.getName());
+    }
+
 }
