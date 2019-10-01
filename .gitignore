@@ -5,3 +5,5 @@ test.iml
 JavaSEForTheImpatient.iml
 *.iml
 *.xml
+target/*
+*.class
