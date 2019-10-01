@@ -28,16 +28,10 @@ public class Employee implements Measurable{
         this.salary = salary;
     }
 
+    /**
+     * @return employee's salary
+     */
     @Override
-    public double getMeasure() {
-        return this.salary;
-    }
-
-    //todo рассчитать среднюю зарплату в массиве работников эти иетоом
-    public double average(Measurable[] objects){
-        return 0;
-    }
-
-
+    public double getMeasure() { return getSalary(); }
 
 }
