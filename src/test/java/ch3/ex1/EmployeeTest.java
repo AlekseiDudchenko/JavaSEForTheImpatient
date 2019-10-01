@@ -8,9 +8,9 @@ class EmployeeTest {
 
     @Test
     void constructorWithoutArguments(){
-        Employee firtsEmployee = new Employee();
-        assertEquals(0, firtsEmployee.getId());
-        assertEquals(0, firtsEmployee.getSalary());
+        Employee firstEmployee = new Employee();
+        assertEquals(0, firstEmployee.getId());
+        assertEquals(0, firstEmployee.getSalary());
 
         Employee secondEmployee = new Employee();
         assertEquals(1, secondEmployee.getId());
