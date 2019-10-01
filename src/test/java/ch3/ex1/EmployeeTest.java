@@ -2,6 +2,8 @@ package ch3.ex1;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class EmployeeTest {
@@ -9,11 +11,11 @@ class EmployeeTest {
     @Test
     void constructorWithoutArguments(){
         Employee firstEmployee = new Employee();
-        assertEquals(0, firstEmployee.getId());
+        assertEquals(Employee.number-1, firstEmployee.getId());
         assertEquals(0, firstEmployee.getSalary());
 
         Employee secondEmployee = new Employee();
-        assertEquals(1, secondEmployee.getId());
+        assertEquals(Employee.number-1, secondEmployee.getId());
         assertEquals(0, secondEmployee.getSalary());
     }
 
@@ -43,7 +45,7 @@ class EmployeeTest {
     }
 
     @Test
-    void getAverage(){
+    void arrayAverageTest(){
         Measurable[] employees = new Employee[]{new Employee(100), new Employee(100), new Employee(100)};
         double average = Measurable.average(employees);
         assertEquals(100, average);
@@ -57,5 +59,24 @@ class EmployeeTest {
         assertEquals((100+50+200+500+10000)/5, Measurable.average(employees));
     }
 
+    @Test
+    void arrayListAverageTest(){
+        ArrayList<Measurable> empl = new ArrayList<>();
+        empl.add(new Employee(100));
+        empl.add(new Employee(200));
+        assertEquals(150, Measurable.average(empl));
+    }
+
+    @Test
+    void emptyArrayListAverageTest(){
+        ArrayList<Measurable> empl = new ArrayList<>();
+        assertEquals(0, Measurable.average(empl));
+    }
+
+    @Test
+    void emptyArrayAverageTest(){
+        Measurable[] empl = new Employee[]{};
+        assertEquals(0, Measurable.average(empl));
+    }
 
 }
