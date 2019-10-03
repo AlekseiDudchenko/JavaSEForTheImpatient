@@ -19,4 +19,8 @@ public class SquareSequence implements IntSequence{
     public int of(IntSequence sequence){
         return 0;
     }
+
+    public void resetIndex(){
+        i = 0;
+    };
 }
