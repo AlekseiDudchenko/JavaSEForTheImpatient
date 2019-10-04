@@ -9,12 +9,18 @@ package ch3.ex4;
 
 public interface IntSequence {
 
-    boolean hasNext();
+    default boolean hasNext(){
+        return true;
+    };
 
     int next();
 
     static int of(IntSequence seq){
         return 0;
+    };
+
+    static IntSequence digitsOf(int n ){
+        return new DigitSequence(n);
     };
 
     static double average(IntSequence seq, int n) {
