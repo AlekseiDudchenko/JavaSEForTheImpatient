@@ -18,6 +18,19 @@ public class IntSequence implements Sequence {
     private int index;
     private ArrayList<Integer> sequence = new ArrayList<>();
 
+    static IntSequence constant(int constant){
+        IntSequence constSequence = new IntSequence() {
+            @Override
+            public int next() {
+                return constant;
+            }
+
+            @Override
+            public void resetIndex() {}
+        };
+        return constSequence;
+    }
+
     static IntSequence of(int... values){
         IntSequence intSequence = new IntSequence();
         for (int value:values){
