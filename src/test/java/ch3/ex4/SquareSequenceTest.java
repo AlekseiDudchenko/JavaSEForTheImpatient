@@ -2,7 +2,7 @@ package ch3.ex4;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SquareSequenceTest {
 
@@ -11,10 +11,7 @@ class SquareSequenceTest {
         SquareSequence squareSequence = new SquareSequence();
         double avg = IntSequence.average(squareSequence, 2);
         assertEquals(2.5, avg);
-        assertEquals(9, IntSequence.average(squareSequence,1));
-        squareSequence.resetIndex();
         assertEquals(1, IntSequence.average(squareSequence,1));
-
     }
 
 }

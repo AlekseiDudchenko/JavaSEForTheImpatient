@@ -1,6 +1,11 @@
 package ch3.ex4;
 
-import java.util.ArrayList;
+/**
+ * Implement a static of method of the IntSequence class that yields a sequence
+ * with the arguments. For example, IntSequence.of(3, 1, 4, 1, 5, 9) yields a
+ * sequence with six values. Extra credit if you return an instance of an
+ * anonymous inner class.
+ */
 
 public interface IntSequence {
 
@@ -8,7 +13,9 @@ public interface IntSequence {
 
     int next();
 
-    int of(IntSequence seq);
+    static int of(IntSequence seq){
+        return 0;
+    };
 
     static double average(IntSequence seq, int n) {
         int count = 0;
@@ -18,7 +25,10 @@ public interface IntSequence {
             count++;
             sum += seq.next();
         }
+        seq.resetIndex();
         return count == 0 ? 0 : sum / count;
     }
+
+    void resetIndex();
 
 }

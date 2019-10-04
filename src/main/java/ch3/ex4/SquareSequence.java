@@ -15,10 +15,9 @@ public class SquareSequence implements IntSequence{
         return i * i;
     }
 
-    @Override
-    public int of(IntSequence sequence){
-        return 0;
-    }
+//    public int of(IntSequence sequence){
+//        return 0;
+//    }
 
     public void resetIndex(){
         i = 0;
