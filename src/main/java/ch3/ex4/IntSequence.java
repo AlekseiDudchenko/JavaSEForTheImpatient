@@ -15,8 +15,10 @@ public interface IntSequence {
 
     int next();
 
-    static int of(IntSequence seq){
-        return 0;
+    void resetIndex();
+
+    static IntSequence of(int a0, int a1, int a2, int a3, int a4, int a5){
+        return new DigitSequence(a0*100000+a1*10000*a2*1000+a3*100+a4*10+a5);
     };
 
     static IntSequence digitsOf(int n ){
@@ -34,7 +36,5 @@ public interface IntSequence {
         seq.resetIndex();
         return count == 0 ? 0 : sum / count;
     }
-
-    void resetIndex();
 
 }

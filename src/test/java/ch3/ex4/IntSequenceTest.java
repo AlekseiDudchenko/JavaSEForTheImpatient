@@ -12,7 +12,8 @@ class IntSequenceTest {
 
     @Test
     void ofTest() {
-        //IntSequence.of(3, 1, 4, 1, 5, 9);
+        //IntSequence ds
+        //assertEquals(IntSequence = new DigitSequence(314159), IntSequence.of(3, 1, 4, 1, 5, 9));
     }
 
 
