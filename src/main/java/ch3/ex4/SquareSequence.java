@@ -1,6 +1,6 @@
 package ch3.ex4;
 
-public class SquareSequence implements IntSequence{
+public class SquareSequence implements Sequence {
 
     private int i;
 
@@ -9,10 +9,6 @@ public class SquareSequence implements IntSequence{
         i++;
         return i * i;
     }
-
-//    public int of(IntSequence sequence){
-//        return 0;
-//    }
 
     public void resetIndex(){
         i = 0;

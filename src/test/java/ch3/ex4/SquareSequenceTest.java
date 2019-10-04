@@ -9,9 +9,9 @@ class SquareSequenceTest {
     @Test
     void averageTest(){
         SquareSequence squareSequence = new SquareSequence();
-        double avg = IntSequence.average(squareSequence, 2);
+        double avg = Sequence.average(squareSequence, 2);
         assertEquals(2.5, avg);
-        assertEquals(1, IntSequence.average(squareSequence,1));
+        assertEquals(1, Sequence.average(squareSequence,1));
     }
 
 }

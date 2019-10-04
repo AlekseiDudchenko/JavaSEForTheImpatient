@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class DigitSequenceTest {
 
     @Test
-    void nextandHasNextTest(){
+    void nextAndHasNextTest(){
         DigitSequence ds = new DigitSequence(123);
         assertTrue(ds.hasNext());
         assertEquals(3, ds.next());
@@ -18,11 +18,11 @@ class DigitSequenceTest {
 
     @Test
     void averageTest(){
-        IntSequence digitSequence  = new DigitSequence(1234);
-        assertEquals(3.5, IntSequence.average(digitSequence,2));
-        assertEquals(3.5, IntSequence.average(digitSequence,2));
-        assertEquals((double)(1+2+3+4)/4, IntSequence.average(digitSequence,4));
-        assertEquals((double)(1+2+3+4)/4, IntSequence.average(digitSequence,10));
+        Sequence digitSequence  = new DigitSequence(1234);
+        assertEquals(3.5, Sequence.average(digitSequence,2));
+        assertEquals(3.5, Sequence.average(digitSequence,2));
+        assertEquals((double)(1+2+3+4)/4, Sequence.average(digitSequence,4));
+        assertEquals((double)(1+2+3+4)/4, Sequence.average(digitSequence,10));
     }
 
     @Test
@@ -49,10 +49,5 @@ class DigitSequenceTest {
         assertTrue(firstDS.equals(secondDS));
         assertTrue(secondDS.equals(firstDS));
     }
-
-//    @Test
-//    void ofTest(){
-//        IntSequence.of()
-//    }
 
 }
