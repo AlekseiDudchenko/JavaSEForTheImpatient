@@ -113,6 +113,21 @@ class EmployeeTest {
     }
 
     @Test
+    void cast(){
+        Measurable[] employees = new Employee[5];
+        employees[0] = new Employee(100);
+        employees[1] = new Employee(50);
+        employees[2] = new Employee(200);
+        employees[3] = new Employee(500);
+        employees[4] = new Employee("Ivan",10000);
+
+        Employee largestEmpl =  (Employee)Measurable.largest(employees);
+        Employee expectedEmpl = (Employee)employees[4];
+        String expectedName = expectedEmpl.getName();
+        assertEquals(expectedName, largestEmpl.getName());
+    }
+
+    @Test
     void nameOfEmployeeWithLargestSalaryArrayList(){
         ArrayList<Measurable> employees = new ArrayList<>();
         employees.add(new Employee("Bob", 100));
