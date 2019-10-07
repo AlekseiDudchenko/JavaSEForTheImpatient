@@ -11,15 +11,12 @@ import java.math.BigInteger;
 
 public class SquareSequence implements Sequence<BigInteger> {
 
-    private BigInteger value = BigInteger.ONE;
+    private BigInteger value = BigInteger.ZERO;
 
     @Override
     public BigInteger next() {
-        return value.multiply(value.add(BigInteger.ONE));
+        value = value.add(BigInteger.ONE);
+        return value.multiply(value);
     }
 
-    @Override
-    public boolean hasNext() {
-        return false;
-    }
 }

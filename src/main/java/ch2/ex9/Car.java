@@ -44,6 +44,7 @@ public class Car{
         this.currentTankLevel = currentTankLevel;
     }
 
+    //todo cover by tests
     public Car(double currentPosition, double fuelEfficiency, double currentTankLevel, double maxTankVolume) {
         this(currentPosition, fuelEfficiency, currentTankLevel);
         this.maxTankVolume =  maxTankVolume;

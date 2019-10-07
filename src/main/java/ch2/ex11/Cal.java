@@ -12,6 +12,7 @@ import static java.time.LocalDate.of;
  * classes.
  */
 
+//todo cover by tests
 public class Cal {
     public static void main(String[] args) {
         LocalDate date = now().withDayOfMonth(1);
