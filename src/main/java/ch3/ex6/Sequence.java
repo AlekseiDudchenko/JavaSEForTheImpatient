@@ -7,5 +7,12 @@ package ch3.ex6;
  * implements Sequence<BigInteger>.
  */
 
-public interface Sequence {
+public interface Sequence<T> {
+
+    T next();
+
+    default boolean hasNext(){
+        return true;
+    }
+
 }
