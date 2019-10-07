@@ -1,4 +1,5 @@
 package ch2.ex9;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -96,5 +97,12 @@ class CarTest {
         Car otherCar = new Car(1);
         otherCar.fill(car.getCurrentTankLevel());
         assertTrue(car.equals(otherCar));
+    }
+
+    @Test
+    void constructorExceptionTest() {
+        assertThrows(NumberFormatException.class, () -> {
+            new Car(12,22, 120, 50);
+        });
     }
 }
