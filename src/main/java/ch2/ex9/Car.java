@@ -41,6 +41,8 @@ public class Car{
 
     public Car(double currentPosition, double fuelEfficiency, double currentTankLevel){
         this(currentPosition, fuelEfficiency);
+        if (currentTankLevel > this.maxTankVolume)
+            throw new NumberFormatException();
         this.currentTankLevel = currentTankLevel;
     }
 
@@ -49,6 +51,7 @@ public class Car{
         this(currentPosition, fuelEfficiency, currentTankLevel);
         this.maxTankVolume =  maxTankVolume;
     }
+
     public double getMaxTankVolume(){
         return maxTankVolume;
     }
