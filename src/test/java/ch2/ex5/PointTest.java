@@ -1,7 +1,7 @@
 package ch2.ex5;
 
-import org.junit.Test;
-//import org.junit.jupiter.api.Test;
+//import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -90,5 +90,37 @@ class PointTest {
     void toStringTest(){
         Point p = new Point(10.89, 1);
         assertEquals("x = 10.89, y = 1.0", p.toString());
+    }
+
+    @org.junit.jupiter.api.Test
+    void getX() {
+    }
+
+    @org.junit.jupiter.api.Test
+    void getY() {
+    }
+
+    @org.junit.jupiter.api.Test
+    void translate() {
+    }
+
+    @org.junit.jupiter.api.Test
+    void scale() {
+    }
+
+    @org.junit.jupiter.api.Test
+    void translateMutate() {
+    }
+
+    @org.junit.jupiter.api.Test
+    void scaleMutate() {
+    }
+
+    @org.junit.jupiter.api.Test
+    void testEquals() {
+    }
+
+    @org.junit.jupiter.api.Test
+    void testToString() {
     }
 }

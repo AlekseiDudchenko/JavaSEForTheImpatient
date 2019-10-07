@@ -139,6 +139,13 @@ class EmployeeTest {
         assertEquals("Alex", largestEmpl.getName());
     }
 
+    @Test
+    void setName(){
+        Employee employee = new Employee();
+        employee.setName("Ivan");
+        assertEquals("Ivan", employee.getName());
+
+    }
 
 
 }
