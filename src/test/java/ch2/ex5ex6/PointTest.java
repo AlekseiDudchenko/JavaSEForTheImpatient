@@ -1,4 +1,4 @@
-package ch2.ex5;
+package ch2.ex5ex6;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

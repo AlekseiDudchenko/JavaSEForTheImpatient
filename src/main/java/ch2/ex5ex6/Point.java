@@ -1,4 +1,4 @@
-package ch2.ex5;
+package ch2.ex5ex6;
 
 /**
  * 5. Implement an immutable class Point that describes a point in the plane.
