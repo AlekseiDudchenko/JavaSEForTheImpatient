@@ -1,6 +1,7 @@
 package ch2.ex9;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CarTest {
@@ -30,6 +31,12 @@ class CarTest {
         assertEquals(11, car3.getFuelEfficiency());
         assertEquals(3, car3.getCurrentTankLevel());
         assertEquals(100, car3.getMaxTankVolume());
+
+        Car newCar = new Car(1, 13, 2, 100);
+        assertEquals(1, newCar.getCurrentPosition());
+        assertEquals(13, newCar.getFuelEfficiency());
+        assertEquals(2, newCar.getCurrentTankLevel());
+        assertEquals(100, newCar.getMaxTankVolume());
     }
 
     @Test
@@ -100,7 +107,7 @@ class CarTest {
     }
 
     @Test
-    void constructorExceptionTest() {
+    void constructorThrowExceptionTest() {
         assertThrows(NumberFormatException.class, () -> {
             new Car(12,22, 120, 50);
         });

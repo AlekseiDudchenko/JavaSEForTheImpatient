@@ -9,18 +9,13 @@ package ch2.ex9;
  * Why or why not?
  */
 
-
 public class Car{
 
     private double currentPosition;
     private double currentTankLevel;
     private double maxTankVolume;
-
-    public double getFuelEfficiency() {
-        return fuelEfficiency;
-    }
-
-    private double fuelEfficiency; //km/l
+    private double fuelEfficiency;
+    public static final String fuelEfficiencyUnits = "km/l";
 
     public Car(){
         this.currentPosition = 0;
@@ -42,14 +37,17 @@ public class Car{
     public Car(double currentPosition, double fuelEfficiency, double currentTankLevel){
         this(currentPosition, fuelEfficiency);
         if (currentTankLevel > this.maxTankVolume)
-            throw new NumberFormatException();
+            throw new NumberFormatException("Current level can't be more then max Volume");
         this.currentTankLevel = currentTankLevel;
     }
 
-    //todo cover by tests
     public Car(double currentPosition, double fuelEfficiency, double currentTankLevel, double maxTankVolume) {
         this(currentPosition, fuelEfficiency, currentTankLevel);
         this.maxTankVolume =  maxTankVolume;
+    }
+
+    public double getFuelEfficiency() {
+        return fuelEfficiency;
     }
 
     public double getMaxTankVolume(){
@@ -79,7 +77,6 @@ public class Car{
         currentPosition = round(currentPosition, 1);
     }
 
-
     public void fill(double liters) {
         if (liters >= 0) {
             if (maxTankVolume >= (currentTankLevel + liters)) {
@@ -101,7 +98,6 @@ public class Car{
                 this.fuelEfficiency == otherCar.fuelEfficiency &&
                 this.maxTankVolume == otherCar.maxTankVolume);
     }
-
 
     public static double round(double value, int places) {
         if (places < 0) throw new IllegalArgumentException();

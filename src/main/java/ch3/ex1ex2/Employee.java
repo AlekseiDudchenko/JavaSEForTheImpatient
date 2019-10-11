@@ -1,12 +1,12 @@
-package ch3.ex1;
+package ch3.ex1ex2;
 
 /**
- * Provide an interface Measurable with a method double getMeasure() that measures
+ * 1. Provide an interface Measurable with a method double getMeasure() that measures
  * an object in some way. Make Employee implement Measurable. Provide
  * a method double average(Measurable[] objects) that computes the average
  * measure. Use it to compute the average salary of an array of employees.
- *
- * Continue with the preceding exercise and provide a method Measurable
+ *//**
+ * 2. Continue with the preceding exercise and provide a method Measurable
  * largest(Measurable[] objects). Use it to find the name of the employee with
  * the largest salary. Why do you need a cast?
  */
@@ -17,27 +17,6 @@ public class Employee implements Measurable{
     private int id;
     private String name;
     static int number;
-
-    public String getName() {
-        if (name == null) return "Unknown";
-        else return name;
-    }
-
-    public void setName(String name){
-        this.name = name;
-    }
-
-    private void setId(){
-        id = number;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
 
     Employee(){
         number +=1;
@@ -63,7 +42,28 @@ public class Employee implements Measurable{
      * @return employee's salary
      */
     @Override
-    public double getMeasure() { return getSalary(); }
+    public double getMeasure() {
+        return getSalary();
+    }
 
+    public String getName() {
+        if (name == null) return "Unknown";
+        else return name;
+    }
 
+    public void setName(String name){
+        this.name = name;
+    }
+
+    private void setId(){
+        id = number;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
 }

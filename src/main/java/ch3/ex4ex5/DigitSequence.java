@@ -1,9 +1,8 @@
-package ch3.ex4;
+package ch3.ex4ex5;
 
 public class DigitSequence implements Sequence {
 
     private int number;
-
     private final int originalNumber;
 
     public DigitSequence(int n){
@@ -48,12 +47,11 @@ public class DigitSequence implements Sequence {
      * @return
      */
     public boolean equals(DigitSequence otherDS){
-        if (this.getLengths() == otherDS.getLengths()){
-            boolean equals = false;
+        if (this.getLengths() != otherDS.getLengths()){
+            return false;
+        } else {
             while (this.hasNext()){
-                if (this.next() == otherDS.next())
-                    equals = true;
-                else {
+                if (this.next() != otherDS.next()){
                     this.resetIndex();
                     otherDS.resetIndex();
                     return false;
@@ -61,9 +59,7 @@ public class DigitSequence implements Sequence {
             }
             this.resetIndex();
             otherDS.resetIndex();
-            return equals;
-        } else {
-            return false;
+            return true;
         }
     }
 

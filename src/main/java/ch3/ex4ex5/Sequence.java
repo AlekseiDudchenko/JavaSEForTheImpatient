@@ -1,4 +1,4 @@
-package ch3.ex4;
+package ch3.ex4ex5;
 
 public interface Sequence {
 
@@ -25,5 +25,4 @@ public interface Sequence {
         seq.resetIndex();
         return count == 0 ? 0 : sum / count;
     }
-
 }

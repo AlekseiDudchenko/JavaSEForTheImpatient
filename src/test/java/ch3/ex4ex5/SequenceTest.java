@@ -1,4 +1,4 @@
-package ch3.ex4;
+package ch3.ex4ex5;
 
 import org.junit.jupiter.api.Test;
 

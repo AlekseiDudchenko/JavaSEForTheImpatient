@@ -15,7 +15,8 @@ public class Invoice {
     private Date date;
     private int invoiceNumber;
     private int amountOfItems;
-    public static int totalNumber;
+    static int totalNumber;
+    private ArrayList<Item> items = new ArrayList<>();
 
     public Invoice(){
         date = new Date();
@@ -29,15 +30,13 @@ public class Invoice {
         double unitPrice;
         int number;
 
-        String getNumber(){
-            return number + ". ";
-        }
-
         Item(String description, int quantity, double unitPrice){
             this.description = description;
             this.quantity = quantity;
             this.unitPrice = unitPrice;
         }
+
+        String getNumber(){ return number + ". "; }
 
         double price() {
             return quantity * unitPrice;
@@ -48,8 +47,6 @@ public class Invoice {
             return  description + "  " + quantity + " x " + unitPrice + "$ = " + price() + "$";
         }
     }
-
-    private ArrayList<Item> items = new ArrayList<Item>();
 
     public void addItem(String description, int quantity, double unitPrice) {
         Item newItem = new Item(description, quantity, unitPrice);

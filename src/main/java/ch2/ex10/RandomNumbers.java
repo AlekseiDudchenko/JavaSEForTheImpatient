@@ -14,16 +14,10 @@ import java.util.Random;
 public class RandomNumbers {
 
     public static int randomElement(int[] array){
-        if (array.length == 0) return 0;
-        else
-            return array[new Random().nextInt(array.length)];
+        return (array.length == 0) ? 0 : array[new Random().nextInt(array.length)];
     }
 
-    public static int randomElement(ArrayList<Integer> arrayList){
-        if (arrayList.isEmpty()) return 0;
-        else
-            return arrayList.get(new Random().nextInt(arrayList.size()));
+    public static int randomElement(ArrayList<Integer> arrayList) {
+        return (arrayList.isEmpty()) ? 0 : arrayList.get(new Random().nextInt(arrayList.size()));
     }
-
-
 }

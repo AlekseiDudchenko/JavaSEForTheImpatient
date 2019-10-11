@@ -30,7 +30,7 @@ class QueueTest {
         queue.addNode(str3);
         assertEquals(str3, queue.toString(2));
         assertEquals( 3, queue.getNodes().size());
-        queue.removeNode();
+        queue.removeTopNode();
         assertEquals( 2, queue.getNodes().size());
         assertEquals(str2, queue.toString(0));
         assertEquals(str3, queue.toString(1));

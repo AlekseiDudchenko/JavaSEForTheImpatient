@@ -11,20 +11,9 @@ import java.util.LinkedList;
 
 public class Queue {
 
-    /**
-     * Add element to the tail of the Queue
-     */
-    void addNode(String string){
-        Node newNode = new Node(string);
-        nodes.addLast(newNode);
-    }
+    private LinkedList<Node> nodes;
 
-    /**
-     * Delete element from the top of the Queue
-     */
-    void  removeNode(){
-        nodes.removeFirst();
-    }
+    Queue(){ nodes = new LinkedList<>(); }
 
     public static class Node{
         String string;
@@ -39,11 +28,18 @@ public class Queue {
         }
     }
 
-    Queue(){
-        nodes = new LinkedList<>();
+    void addNode(String string){
+        Node newNode = new Node(string);
+        nodes.addLast(newNode);
     }
 
-    private LinkedList<Node> nodes;
+    void addNode(Node node){
+        nodes.addLast(node);
+    }
+
+    void removeTopNode(){
+        nodes.removeFirst();
+    }
 
     LinkedList<Node> getNodes() {
         return nodes;

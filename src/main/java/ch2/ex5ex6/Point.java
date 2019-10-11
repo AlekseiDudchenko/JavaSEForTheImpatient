@@ -7,8 +7,9 @@ package ch2.ex5ex6;
  * method moves the point by a given amount in x- and y-direction. The
  * scale method scales both coordinates by a given factor. Implement these
  * methods so that they return new points with the results. For example,
- * Point p = new Point(3, 4).translate(1, 3).scale(0.5);
+ *  Point p = new Point(3, 4).translate(1, 3).scale(0.5);
  * should set p to a point with coordinates (2, 3.5).
+ *//**
  * 6. Repeat the preceding exercise, but now make translate and scale into
  * mutators.
  */
@@ -24,50 +25,25 @@ public class Point {
     /**
      * set x = 0, y = 0
      */
-    public Point(){
-    }
+    public Point(){}
 
-    double getX() {
-        return this.x;
-    }
+    double getX() { return this.x; }
 
-    double getY() {
-        return this.y;
-    }
+    double getY() { return this.y; }
 
-    /**
-     *
-     * @param moveX
-     * @param moveY
-     * @return
-     */
     public Point translate(double moveX, double moveY){
         return new Point(this.x + moveX, this.y + moveY);
     }
 
-    /**
-     *
-     * @param scale
-     * @return
-     */
     public Point scale(double scale){
         return  new Point(this.x*scale, this.y*scale);
     }
 
-    /**
-     *
-     * @param moveX
-     * @param moveY
-     */
     public void translateMutate(double moveX, double moveY){
         this.x += moveX;
         this.y += moveY;
     }
 
-    /**
-     *
-     * @param scale
-     */
     public void scaleMutate(double scale){
         this.x *= scale;
         this.y *= scale;
@@ -81,5 +57,4 @@ public class Point {
     public String toString(){
         return "x = " + this.x + ", y = " + this.y;
     }
-
 }

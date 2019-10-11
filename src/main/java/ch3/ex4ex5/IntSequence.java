@@ -1,13 +1,13 @@
-package ch3.ex4;
+package ch3.ex4ex5;
 
 import java.util.ArrayList;
 /**
- * Implement a static of method of the Sequence class that yields a sequence
+ * 4. Implement a static of method of the Sequence class that yields a sequence
  * with the arguments. For example, Sequence.of(3, 1, 4, 1, 5, 9) yields a
  * sequence with six values. Extra credit if you return an instance of an
  * anonymous inner class.
- *
- * Add a static method with the name constant of the IntSequence class that
+ *//**
+ * 5. Add a static method with the name constant of the IntSequence class that
  * yields an infinite constant sequence. For example, IntSequence.constant(1)
  * yields values 1 1 1..., ad infinitum. Extra credit if you do this with a
  * lambda expression.
@@ -19,16 +19,12 @@ public class IntSequence implements Sequence {
     private ArrayList<Integer> sequence = new ArrayList<>();
 
     static IntSequence constant(int constant){
-        IntSequence constSequence = new IntSequence() {
+       return new IntSequence() {
             @Override
             public int next() {
                 return constant;
             }
-
-            @Override
-            public void resetIndex() {}
         };
-        return constSequence;
     }
 
     static IntSequence of(int... values){
@@ -37,7 +33,7 @@ public class IntSequence implements Sequence {
             intSequence.add(value);
         }
         return intSequence;
-    };
+    }
 
     private void add(int n){
         sequence.add(n);
