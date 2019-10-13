@@ -5,6 +5,9 @@ package ch4;
  * accessor methods getX, getY. Define a subclass LabeledPoint with a constructor
  * public LabeledPoint(String label, double x, double y) and an accessor method
  * getLabel.
+ * //**
+ * Define toString, equals, and hashCode methods for the classes of the preceding
+ * exercise.
  */
 
 // todo tests
@@ -18,5 +21,10 @@ public class LabeledPoint extends Point {
 
     public String getLabel() {
         return label;
+    }
+
+    //todo
+    public boolean equals(LabeledPoint otherPoint){
+        return  (this.x == otherPoint.x && this.y == otherPoint.y);
     }
 }
