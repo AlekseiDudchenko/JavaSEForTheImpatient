@@ -26,4 +26,20 @@ public class LabeledPoint extends Point {
     public String toString(){
          return "X = " + getX() + ", Y = " + getY() + " " + getLabel();
     }
+
+    @Override
+    public int hashCode(){
+         int hash = 7;
+         hash = hash + super.hashCode();
+         hash = 31 * hash + (label == null ? 0 : label.hashCode());
+         return hash;
+         /*
+        "The implementation utilize number 31
+        because 31 has a nice property –
+        its multiplication can be replaced by a bitwise shift
+        which is faster than the standard multiplication"
+        */
+    }
+
+
 }

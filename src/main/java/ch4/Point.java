@@ -39,8 +39,11 @@ public class Point {
         return "X = " + x + ", Y = " + y;
     }
 
-
-//    public void hashCode(){
-//
-//    }
+    @Override
+    public int hashCode(){
+        int hash = 7;
+        hash = 31 * hash + (int)x;
+        hash = 31 * hash + (int)y;
+        return hash;
+    }
 }
