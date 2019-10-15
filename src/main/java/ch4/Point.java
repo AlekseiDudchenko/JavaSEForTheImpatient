@@ -11,7 +11,7 @@ package ch4;
  */
 
 public class Point {
-    double x, y;
+    private double x, y;
 
     public Point(double x , double y){
         this.x = x;
@@ -33,4 +33,14 @@ public class Point {
             return this.x == otherPoint.x && this.y == otherPoint.y;
         } else return false;
     }
+
+    @Override
+    public String toString(){
+        return "X = " + x + ", Y = " + y;
+    }
+
+
+//    public void hashCode(){
+//
+//    }
 }

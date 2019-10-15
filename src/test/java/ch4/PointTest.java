@@ -8,11 +8,10 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 class PointTest {
 
     @Test
-    void getX() {
-    }
-
-    @Test
-    void getY() {
+    void getXGetYTest() {
+        Point point1 = new Point(1,5);
+        assertEquals(1, point1.getX());
+        assertEquals(5, point1.getY());
     }
 
     @Test
@@ -33,5 +32,11 @@ class PointTest {
         assertNotEquals(point1, point5);
         assertNotEquals(point1, object);
         assertNotEquals(point1, labeledPoint2);
+    }
+
+    @Test
+    void toStringTest(){
+        Point point = new Point(4,5);
+        assertEquals("X = 4.0, Y = 5.0", point.toString());
     }
 }
