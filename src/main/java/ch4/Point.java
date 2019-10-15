@@ -26,10 +26,11 @@ public class Point {
         return y;
     }
 
-    public boolean equals(Point otherPoint){
-        return this.x == otherPoint.x && this.y == otherPoint.y;
+    @Override
+    public boolean equals(Object object){
+        if (object instanceof Point) {
+            Point otherPoint = (Point) object;
+            return this.x == otherPoint.x && this.y == otherPoint.y;
+        } else return false;
     }
-
-
-
 }
