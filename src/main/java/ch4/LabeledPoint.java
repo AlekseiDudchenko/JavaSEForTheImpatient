@@ -10,7 +10,6 @@ package ch4;
  * exercise.
  */
 
-// todo tests
 public class LabeledPoint extends Point {
     private String label;
 
@@ -23,8 +22,8 @@ public class LabeledPoint extends Point {
         return label;
     }
 
-    //todo
-    public boolean equals(LabeledPoint otherPoint){
-        return  (this.x == otherPoint.x && this.y == otherPoint.y);
+    @Override
+    public String toString(){
+         return "X = " + getX() + ", Y = " + getY() + " " + getLabel();
     }
 }
