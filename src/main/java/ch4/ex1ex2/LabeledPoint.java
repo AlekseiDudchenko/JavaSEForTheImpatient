@@ -1,4 +1,4 @@
-package ch4;
+package ch4.ex1ex2;
 
 /**
  * Define a class Point with a constructor public Point(double x, double y) and
@@ -25,6 +25,16 @@ public class LabeledPoint extends Point {
     @Override
     public String toString(){
          return "X = " + getX() + ", Y = " + getY() + " " + getLabel();
+    }
+
+    /**
+     * Labeled Points are equal if their x and y are equal.
+     * @param object point to compare
+     * @return
+     */
+    @Override
+    public boolean equals(Object object){
+        return super.equals(object);
     }
 
     @Override
