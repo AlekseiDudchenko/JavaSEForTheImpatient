@@ -27,9 +27,9 @@ public class Point {
      */
     public Point(){}
 
-    double getX() { return this.x; }
+    public  double getX() { return this.x; }
 
-    double getY() { return this.y; }
+    public double getY() { return this.y; }
 
     public Point translate(double moveX, double moveY){
         return new Point(this.x + moveX, this.y + moveY);
