@@ -24,7 +24,7 @@ public abstract class Shape {
     }
 
     public void moveBy(double dx, double dy){
-        point.translate(dx, dy);
+        point = point.translate(dx, dy);
     }
 
     public abstract Point getCenter();
