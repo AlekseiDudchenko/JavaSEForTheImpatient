@@ -21,10 +21,5 @@ class ShapeTest {
         assertEquals(myShape.getCenter(), testPoint);
         myShape.moveBy(3.0, 5.0);
         assertTrue(myShape.getCenter().equals(new Point(5, 10)));
-
-    }
-
-    @Test
-    void getCenter() {
     }
 }
